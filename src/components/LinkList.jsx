@@ -1,16 +1,24 @@
 import React from 'react'
 
-const LinkList =({Links})=>{
+const LinkList =({Links,linkType})=>{
 console.log(Links)
-if(Links){
+if(!(Links.length === 0)){
     return (
     <div>
-    {Links.map( link => <IndividaulLink link ={link}/>)}
+    <h2>{linkType}</h2>
+    <ul>
+    {Links.map( link => <IndividaulLink link ={link} key ={link._id}/>)}
+    </ul>
     </div>
 )
 }
 
-else return null
+else return (
+    <div>
+        <h2>{linkType}</h2>
+        <div>...loading</div>
+    </div>
+)
 
 }
 
@@ -18,11 +26,13 @@ else return null
 const IndividaulLink = ({link}) => {
 
     return (
+        <li >
         <details>
-            <summary>Title to go here</summary>
+            <summary>{link.jobTitle}</summary>
             <a href={link.url}>Link to Job Website </a> <br/>
             <a href={`https://tech.london/discovery/jobs/${link.jobID}`}>Link to Tech London Website </a>
         </details>
+        </li>
     )
 
 }

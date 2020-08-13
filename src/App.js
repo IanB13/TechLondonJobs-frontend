@@ -2,6 +2,7 @@ import React,{useState,useEffect} from 'react';
 import APIRequests from './services/APIRequest';
 import './App.css';
 import LinkList from './components/LinkList';
+import Summary from './components/Summary';
 
 function App() {
   const [jobLinks, changeJobLinks] = useState([{loading:true}]);
@@ -12,20 +13,18 @@ function App() {
     })
   }, [])
 
-  let deadLinks = undefined;
-  let liveLinks =undefined;
-
-if(!jobLinks.loading){
-   deadLinks = jobLinks.filter(link => link.deadLink === true);
-   liveLinks = jobLinks.filter(link => link.deadLink === false);
+  const liveLinks = jobLinks.filter(link => link.deadLink === false);
+  const deadLinks = jobLinks.filter(link => link.deadLink === true);
  
   return (
-    <div className="App">
-        <LinkList Links = {deadLinks}/>
+    <div className="App container">
+        <Summary />
+        <LinkList Links ={liveLinks} linkType ="Live Links" />
+        <LinkList Links = {deadLinks} linkType = "Dead Links" />
     </div>
   );
-}
-else return <div>...loading </div>
+
+
 }
 
 export default App;
