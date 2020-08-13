@@ -15,9 +15,9 @@ const IndividaulLink = ({link,linkType}) => {
     }
 
     return (
-        <List.Item>
+        <List.Item style = {{"lineHeight": "1.6em"}}>
         <List.Icon name={icon} />
-        <List.Content>
+        <List.Content style = {{"lineHeight": "1.6em"}}> 
         <details>
             <summary>{link.jobTitle}</summary>
             <a href={link.url}>Link to Job Website </a> <br/>
