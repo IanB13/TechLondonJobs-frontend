@@ -16,10 +16,11 @@ function App() {
 
   const liveLinks = jobLinks.filter(link => link.deadLink === false);
   const deadLinks = jobLinks.filter(link => link.deadLink === true);
- 
+  const totalJobs = jobLinks.length;
+
   return (
     <div className="App container">
-        <Summary />
+        <Summary totalJobs = {totalJobs} />
       <div>
         <LinkList Links ={liveLinks} linkType ="Live" />
       </div>
