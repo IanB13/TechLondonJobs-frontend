@@ -7,11 +7,11 @@ const LinkList = ({ Links: links, linkType }) => {
     //for more  options in future
     switch (linkType) {
         case "Live":
-            h2style = { "border-color": "green" }
+            h2style = { "borderColor": "green" }
             break;
 
         default:
-            h2style = { "border-color": "red" }
+            h2style = { "borderColor": "red" }
             break;
     }
 
