@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react';
 import APIRequests from './services/APIRequest';
 import './App.css';
+import 'semantic-ui-css/semantic.min.css'
 import LinkList from './components/LinkList';
 import Summary from './components/Summary';
 
@@ -19,8 +20,12 @@ function App() {
   return (
     <div className="App container">
         <Summary />
-        <LinkList Links ={liveLinks} linkType ="Live Links" />
-        <LinkList Links = {deadLinks} linkType = "Dead Links" />
+      <div>
+        <LinkList Links ={liveLinks} linkType ="Live" />
+      </div>
+      <div>
+        <LinkList Links = {deadLinks} linkType = "Dead" />
+      </div>
     </div>
   );
 
