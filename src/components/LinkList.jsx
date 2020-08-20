@@ -1,5 +1,5 @@
 import React from 'react';
-import {List} from 'semantic-ui-react';
+import { List } from 'semantic-ui-react';
 import IndividaulLink from './IndividualLink';
 
 const LinkList = ({ Links: links, linkType }) => {
@@ -19,7 +19,7 @@ const LinkList = ({ Links: links, linkType }) => {
         return (
             <>
                 <h2 style={h2style}>{linkType} Job Links</h2>
-                <p className ="jobsNum">Total Jobs: {links.length}</p> 
+                <p className="jobsNum">Total Jobs: {links.length}</p>
                 <List>
                     {links.map(link => <IndividaulLink link={link} linkType={linkType} key={link._id} />)}
                 </List>

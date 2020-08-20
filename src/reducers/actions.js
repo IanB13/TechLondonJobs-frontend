@@ -1,4 +1,4 @@
-import APIRequest from '../services/APIRequest'
+import APIRequest from '../services/APIRequest';
 
 //thunk middleware allows async return 
 export const initializeJobPostings = () => {

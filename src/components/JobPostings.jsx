@@ -1,13 +1,13 @@
-import React from 'react'
+import React from 'react';
 import LinkList from './LinkList';
 import Summary from './Summary';
 
-const JobPostings = ({jobPostings}) =>{
-    
-  const liveLinks = jobPostings.filter(link => link.deadLink === false);
-  const deadLinks = jobPostings.filter(link => link.deadLink === true);
-  const totalJobs = jobPostings.length;
-    
+const JobPostings = ({ jobPostings }) => {
+
+    const liveLinks = jobPostings.filter(link => link.deadLink === false);
+    const deadLinks = jobPostings.filter(link => link.deadLink === true);
+    const totalJobs = jobPostings.length;
+
     return (
         <>
             <Summary totalJobs={totalJobs} />
