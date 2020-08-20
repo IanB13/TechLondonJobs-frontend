@@ -1,17 +1,19 @@
 import React,{useEffect} from 'react';
-//import APIRequests from './services/APIRequest';
 import './App.css';
 import 'semantic-ui-css/semantic.min.css'
+import {initializeJobPostings} from './reducers/actions'
+import { useSelector, useDispatch } from 'react-redux'
 import JobPostings from './components/JobPostings'
 
 function App() {
-  const [jobPostings, changeJobPostings] = useState([]);
-  
+  const dispatch = useDispatch();
+
   useEffect(() => {
-    APIRequests.getJobLinks().then(links => {
-      changeJobPostings(links)
-    })
-  }, [])
+    dispatch(initializeJobPostings()) 
+  },[dispatch]) 
+
+
+  const jobPostings = useSelector(state => state.jobPostings)
 
 
   return (
